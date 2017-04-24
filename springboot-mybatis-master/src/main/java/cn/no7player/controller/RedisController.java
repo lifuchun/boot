@@ -36,8 +36,10 @@ public class RedisController {
       
     @ResponseBody
     @RequestMapping(value="/redis/get/{name}",method= RequestMethod.GET)  
-    public String redisGet(@PathVariable("name") String name){  
+    public String redisGet(@PathVariable("name") String name){ 
+    	System.out.println(name);
         String value = redisServce.get("name");  
+        System.out.println(value);
         return JsonUtil.toJson(value); 
     }  
 }
